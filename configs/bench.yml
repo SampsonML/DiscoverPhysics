@@ -1,0 +1,80 @@
+# ------------------------------------------------------------
+# Example YAML benchmark config for scripts/run_benchmark.py.
+#
+# Run:    python scripts/run_benchmark.py configs/demo.yml
+# Output: results/yml_bench/<name>/{run.sh, config.yml,
+#                                   summary.txt, summary_per_model.txt,
+#                                   <model>/<world>[_noise<σ>]_seed<s>.{json,txt,stdout.log}}
+#
+# Required fields: models, critic, max_rounds, worlds, seeds.
+# Optional fields: name, critic_model, judge_model, noise_std,
+#                  random_experiments, no_mse.
+# ------------------------------------------------------------
+
+
+# ---------------
+# name of the run (subdir under results/yml_bench/).
+# default: current timestamp (YYYYMMDD-HHMMSS).
+name: production_run
+
+# -----------------------------------------
+# models to test on (will run sequentially)
+models:
+  - claude-opus-4-7
+
+# ---------------
+# use the critic? 'on' / 'off' (or true / false).
+critic: off
+# what model to use for the critic
+critic_model: claude-sonnet-4-6
+
+# ----------------------------------------------------------
+# model used by the LLM-judge that scores each agent's prose
+# explanation against the world's optimal_explanation.
+# default: claude-opus-4-6.
+judge_model: claude-opus-4-6
+
+# --------------------------
+# max experimentation rounds per trial.
+max_rounds: 16
+
+# ---------------------------------
+# noise level σ added to observed particle positions.
+# Either a single number or a list of numbers (multi-σ sweep);
+# in list form each σ becomes its own trial and gets a "_noise<σ>"
+# tag in the output filename. default: 0.0.
+noise_std: 0.075
+# noise_std: [0.0, 0.05, 0.1]   # example multi-σ sweep
+
+# ----------------------------------------------------------
+# replace the LLM-driven experiment loop with random-parameter
+# experiments (uses --random-experiments / --random-seed).
+# 'on' / 'off' (or true / false). default: off.
+random_experiments: off
+
+# ----------------------------------------------------------
+# allow MSE fitting during rounds
+# 'on' / 'off' (or true / false). default: off.
+no_mse: off
+
+# --------------------
+# which physics worlds. Available: circle, coulomb_easy, dark_matter,
+# ether, extra_dimensions, fractional, force_geography, gravity, hubble,
+# oscillator, running_coupling, three_species, yukawa.
+worlds:
+  - gravity
+  - yukawa
+  - fractional
+  - dark_matter
+  - three_species
+  - ether
+  - hubble
+  - coulomb_easy
+  - extra_dimensions
+  - circle
+  - oscillator
+  - running_coupling
+  - force_geography
+
+# how many rng trials per run (one trial per seed per world per σ).
+seeds: [0, 1]

@@ -1,0 +1,39 @@
+# logs
+logs/
+
+# Images
+*.png
+
+# Environment / secrets
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data / results
+results/
+
+# Claude Code
+CLAUDE.md
