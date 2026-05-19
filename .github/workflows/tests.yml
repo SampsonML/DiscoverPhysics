@@ -22,6 +22,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+          cache-dependency-path: |
+            PhysicsSchool/setup.py
+            ScienceAgent/setup.py
 
       - name: Install packages
         run: |
