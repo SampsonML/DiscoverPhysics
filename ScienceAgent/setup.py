@@ -9,8 +9,10 @@ setup(
         "anthropic>=0.40.0",
         "openai>=1.50.0",
         "numpy",
+        "scipy",
         "jax",
         "pyyaml",
+        "requests",
     ],
     extras_require={
         "dev": ["pytest"],
