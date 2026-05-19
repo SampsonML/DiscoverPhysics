@@ -43,8 +43,8 @@ max_rounds: 16
 # Either a single number or a list of numbers (multi-σ sweep);
 # in list form each σ becomes its own trial and gets a "_noise<σ>"
 # tag in the output filename. default: 0.0.
-noise_std: 0.075
-# noise_std: [0.0, 0.05, 0.1]   # example multi-σ sweep
+noise_frac: 0.05
+# noise_frac: [0.0, 0.05, 0.1]   # example multi-σ sweep
 
 # ----------------------------------------------------------
 # replace the LLM-driven experiment loop with random-parameter
