@@ -2491,9 +2491,12 @@ class NBodyCoulombEasyExecutor(_NoisyExecutorMixin):
         masses = np.array([1e15, 1.0], dtype=np.float64)
         # Enforce attraction: opposite-sign charges. The agent's |p1|, |p2|
         # are the discoverable charge magnitudes; the hidden sign convention
-        # makes the pair always attractive.
+        # makes the pair always attractive. With Coulomb F_mag = -k q_i q_j / r²
+        # (positive F_mag = attractive), particle 1 must carry its own signed
+        # charge in `force_charges` for the product q_recv·q_send to come out
+        # negative — otherwise the pair would be repulsive.
         source_charges = np.array([+abs(p1), -abs(p2)], dtype=np.float64)
-        force_charges = np.array([0.0, 1.0], dtype=np.float64)
+        force_charges = np.array([0.0, -abs(p2)], dtype=np.float64)
 
         sim = NBodySampler(
             masses=masses,
