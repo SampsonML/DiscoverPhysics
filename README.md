@@ -235,7 +235,7 @@ The `@k=K` column counts worlds where at least one of the first K seeds achieved
 ## Experimental Rounds
 We show an example of an agent experimenting with new particle positions, to discover the underlying laws of the oscillator system. By choosing wise probe positions the agents are able to aquire much more information about a system and ideally, help them discover their governing laws of motion.
 
-![Oscillator narrative across rounds](imgs/oscillator_seed3_narrative-1.png)
+![Oscillator narrative across rounds](imgs/oscillator_seed3_narrative-2.png)
 
 *A successful run on the `oscillator` world (seed 3). Left column: the agent's reasoning at each round. Right column: the experiments it designed, with ground-truth trajectories (solid), the agent's proposed law (dashed), and the noisy observations it actually saw (×). Round 1 is a quick parameter sweep over short timescales; Round 2 is the "aha" — extending the time window exposes a periodic flip in the radial velocity, ruling out a static $1/r^2$ law; Round 3 verifies a time-dependent radial law and submits. The final fit recovers $\omega \approx \pi/2$ and a mean position error of 0.0015 on held-out trajectories.*
 
