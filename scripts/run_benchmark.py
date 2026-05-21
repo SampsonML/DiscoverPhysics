@@ -41,8 +41,7 @@ _PASS_SCORE_THRESHOLD = 0.75  # arithmetic mean of explanation score must be >= 
 _WORLD_VARS: dict[str, float] = {
     "circle": 6.596,
     "confinement": 3.636,
-    "coulomb_easy": 11.465,
-    "coulomb_hard": 30.012,
+    "coulomb_easy": 4.244,
     "dark_matter": 63.303,
     "diffusion": 5.878,
     "ether": 21.259,
