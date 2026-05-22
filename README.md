@@ -14,9 +14,9 @@ LLM agents are placed in simulated physical worlds with unknown governing laws. 
 The simulator generates diverse worlds by randomizing field equations, particle-field couplings, and symmetry structures, forcing agents to perform genuine scientific reasoning rather than pattern matching against known physics.
 
 ### Current benchmarking results
-![Benchmark results across frontier and open-weight models](imgs/moneyplot2-1.png)
+![Benchmark results across frontier and open-weight models](imgs/moneyplot2_private.png)
 
-*Benchmark results across the suite. **Left:** trajectory MSE vs. LLM-judge explanation score — the frontier reasoning models (Opus 4.7, GPT-5.5) cluster in the upper-left "good fit + good explanation" corner, while the rest trade one off against the other. **Middle:** expected worlds passed at $k$ seeds — Opus 4.7 and GPT-5.5 perform well, with most other models plateauing well below 2/11. **Right:** Expected pass@k=3 percentage plotted against model release date, showing a clear capability trend over the past year.*
+*Benchmark results across the suite. **Left:** trajectory MSE vs. LLM-judge explanation score — the frontier reasoning models (Opus 4.7, GPT-5.5) cluster in the upper-left "good fit + good explanation" corner, while the rest trade one off against the other. **Middle:** expected worlds passed at $k$ seeds — Opus 4.7 and GPT-5.5 perform well, with most other models plateauing well below 10% pass rate. **Right:** Expected pass@k=3 percentage plotted against model release date, showing a clear capability trend over the past year.*
 
 ## How It Works
 
@@ -168,7 +168,7 @@ critic: off                                # 'on' or 'off'
 critic_model: claude-sonnet-4-6            # only used if critic: on
 judge_model: claude-opus-4-6               # LLM-judge that scores prose explanations
 max_rounds: 16
-noise_std: 0.075                           # scalar or list (multi-σ sweep)
+noise_frac: 0.075                           # scalar or list (multi-σ sweep)
 random_experiments: off                    # 'on' replaces LLM-driven loop with random params
 no_mse: off                                # 'on' hides trajectory-MSE feedback (mutually exclusive with random_experiments)
 worlds:
