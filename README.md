@@ -1,4 +1,5 @@
 # DiscoverPhysics
+[![arXiv](https://img.shields.io/badge/arXiv-2605.26087-B31B1B.svg?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.26087)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](#license)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge&logo=python&logoColor=white)](https://github.com/psf/black)
 [![Tests](https://img.shields.io/github/actions/workflow/status/SampsonML/DiscoverPhysics/tests.yml?branch=main&style=for-the-badge&label=tests)](https://github.com/SampsonML/DiscoverPhysics/actions/workflows/tests.yml)
