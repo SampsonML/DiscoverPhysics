@@ -255,3 +255,14 @@ Set the corresponding environment variable (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
+## Citation
+```bibtex
+@article{wiemann2026discoverphysics,
+  title={DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking},
+  author={Wiemann, Matt L and Smith, Lindsay M and Melchior, Peter and Mishra-Sharma, Siddharth and Wilson, Andrew Gordon and Izmailov, Pavel and Cuesta-L{\'a}zaro, Carolina},
+  journal={arXiv preprint arXiv:2605.26087},
+  year={2026}
+}
+```
+
+
