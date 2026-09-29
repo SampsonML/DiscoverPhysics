@@ -45,7 +45,7 @@ _TRUE_LAW_YUKAWA = (
 _TRUE_LAW_FRACTIONAL = (
     _GENERAL_FORM + "\n\n"
     r"$n = 0$" + "\n"
-    r"$L[\varphi] = -(-\nabla^2)^{\alpha}\varphi,\quad \alpha = 0.75$" + "\n"
+    r"$L[\varphi] = -(-\nabla^2)^{\alpha}\varphi,\quad \alpha = 0.5$" + "\n"
     r"$\mathbf{F} = -\nabla\varphi\,/\,p_2$"
 )
 
@@ -200,11 +200,11 @@ _RUBRIC_YUKAWA = """\
 _RUBRIC_FRACTIONAL = """\
 10 — Identifies a static non-local / fractional-Laplacian operator of the
      form −(−∇²)^α with α in a plausible range (roughly 0.3–0.8; ground
-     truth α = 0.5); describes the force as decaying more slowly with
-     distance than the standard 2D Laplacian case (enhanced long-range
-     interaction); correctly names p1 as source and p2 as inertia.
+     truth α = 0.5); describes the force as decaying more quickly with
+     distance than the standard 2D Laplacian case (1/r² rather than 1/r
+     at α = 0.5); correctly names p1 as source and p2 as inertia.
  7–9 — Identifies an anomalous / non-local spatial operator with unusual
-     (slower-than-standard) long-range behaviour, but misses α, places α
+     (faster-than-standard) long-range behaviour, but misses α, places α
      outside a plausible range, or articulates the direction of the anomaly
      vaguely or incorrectly.
  4–6 — Recognises static attraction but assumes a standard Laplacian or
@@ -508,9 +508,9 @@ WORLDS = {
         "optimal_explanation": (
             "Two particles interact through a static field governed by a fractional Laplacian "
             "operator, -(-∇²)^α with α = 0.5, sourced by particle 1 with coupling p1. The "
-            "non-local operator produces a force on particle 2 that decays more slowly with "
-            "distance than the standard 2D Laplacian case — long-range interactions are "
-            "enhanced. Particle 2 responds with inertia p2 and the field is time-independent."
+            "non-local operator produces a force on particle 2 that scales as 1/r^(3 - 2α), "
+            "so at α = 0.5 it decays as 1/r², more quickly than the standard 2D Laplacian "
+            "force (1/r). Particle 2 responds with inertia p2 and the field is time-independent."
         ),
         "explanation_rubric": _RUBRIC_FRACTIONAL,
     },
